@@ -1,0 +1,48 @@
+version: '2'
+services:
+    nginx:
+        image: nginx:latest
+        container_name: "project_${PROJECT_NAME}_nginx"
+        ports:
+            - "${HTTP_PORT}:80"
+            - "${HTTPS_PORT}:443"
+        volumes:
+            - .:/var/www/html:rw
+            - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf
+        links:
+            - php
+        restart: always
+    php:
+        container_name: "project_${PROJECT_NAME}_php"
+        build:
+            context: ./docker/php
+            args:
+                HOST_UID: ${HOST_UID}
+                GITHUB_OAUTH_TOKEN: ${GITHUB_OAUTH_TOKEN}
+        volumes:
+            - .:/var/www/html:rw
+#            - ./docker/php/.ssh:/var/www/.ssh
+        restart: always
+    mysql:
+        container_name: "project_${PROJECT_NAME}_mysql"
+        hostname: "mysql"
+        build:
+            context: ./docker/mysql
+            args:
+                HOST_UID: ${HOST_UID}
+        restart: always
+        volumes:
+            - ./docker/runtime/mysql:/var/lib/mysql
+        ports:
+            - "${MYSQL_PORT}:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: secret
+            MYSQL_DATABASE: database
+            MYSQL_USER: user
+            MYSQL_PASSWORD: secret
+    mailcatcher:
+        container_name: "project_${PROJECT_NAME}_mailcatcher"
+        image: xelbot/mailcatcher
+        restart: always
+        ports:
+            - "${MAILCATCHER_PORT}:1080"

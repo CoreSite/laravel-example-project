@@ -7,5 +7,5 @@ Build docker container and run they.
 ```
 docker-compose build
 docker-compose up -d
-docker-compose exec web php www-data
+docker-compose exec php su www-data
 ```

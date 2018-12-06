@@ -40,6 +40,25 @@ services:
             MYSQL_DATABASE: database
             MYSQL_USER: user
             MYSQL_PASSWORD: secret
+    postgres:
+        container_name: "project_${PROJECT_NAME}_postgres"
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_DB: database
+            POSTGRES_USER: user
+            POSTGRES_PASSWORD: secret
+        volumes:
+            - ./docker/runtime/postgres:/var/lib/postgresql/data
+        ports:
+          - "${POSTGRES_PORT}:5432"
+
+    postgres_adminer:
+        container_name: "project_${PROJECT_NAME}_postgres_adminer"
+        image: adminer
+        restart: always
+        ports:
+            - 8080:8080
     mailcatcher:
         container_name: "project_${PROJECT_NAME}_mailcatcher"
         image: xelbot/mailcatcher

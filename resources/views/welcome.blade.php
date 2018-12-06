@@ -10,6 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
 
         <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
         <style>
             html, body {
                 background-color: #fff;
@@ -94,5 +95,6 @@
                 </div>
             </div>
         </div>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
 </html>

@@ -32,7 +32,7 @@ RUN apt-get update && apt-get install -y \
 RUN pecl install mcrypt-1.0.1
 
 RUN docker-php-ext-install -j$(nproc) iconv \
-    && docker-php-ext-install -j$(nproc) pdo pdo_mysql \
+    && docker-php-ext-install -j$(nproc) pdo pdo_mysql pdo_pgsql \
     && docker-php-ext-configure bcmath \
     && docker-php-ext-install -j$(nproc) bcmath \
     && docker-php-ext-configure mbstring \

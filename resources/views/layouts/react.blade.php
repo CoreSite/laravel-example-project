@@ -17,9 +17,8 @@
     <link href="{{ asset('build/styles.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="root-app"></div>
+<div id="root"></div>
 <!-- Scripts -->
-{{--<script src="{{ asset('js/app.js') }}" defer></script>--}}
-<script src="{{ asset('build/app.js') }}"></script>
+<script src="{{ asset('build/app.js') }}" defer></script>
 </body>
 </html>

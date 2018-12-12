@@ -4,7 +4,5 @@ import Home from "./components/Home";
 
 ReactDOM.render(
     <Home />,
-    document.getElementById("root-app")
+    document.getElementById("root")
 );
-
-console.log('QWERTY');

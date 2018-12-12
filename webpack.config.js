@@ -25,11 +25,8 @@ Encore
 // uncomment if you use Sass/SCSS files
 // .enableSassLoader()
 
-    .enableTypeScriptLoader(function (typeScriptConfigOptions) {
-        //typeScriptConfigOptions.transpileOnly = true;
-        //typeScriptConfigOptions.configFileName = './tsconfig.json';
-    })
-    .enableReactPreset()
+    .enableTypeScriptLoader()
+    //.enableReactPreset()
 ;
 
 module.exports = Encore.getWebpackConfig();

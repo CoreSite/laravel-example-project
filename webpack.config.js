@@ -25,7 +25,6 @@ Encore
 // uncomment if you use Sass/SCSS files
 // .enableSassLoader()
 
-    .enableTypeScriptLoader()
     //.enableReactPreset()
 ;
 

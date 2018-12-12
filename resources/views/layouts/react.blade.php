@@ -19,6 +19,7 @@
 <body>
 <div id="root"></div>
 <!-- Scripts -->
+<script src="{{ asset('build/runtime.js') }}" defer></script>
 <script src="{{ asset('build/app.js') }}" defer></script>
 </body>
 </html>

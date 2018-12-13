@@ -6,7 +6,7 @@ Encore
     // the public path used by the web server to access the previous directory
     .setPublicPath('/build')
     .addEntry('app', [
-        './resources/ts/app.ts',
+        './resources/ts/index.ts',
 
     ])
     .addStyleEntry('styles', [

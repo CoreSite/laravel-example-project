@@ -1,4 +1,4 @@
 require('../ts/bootstrap');
-require('../ts/load');
+require('../ts/router');
 
 

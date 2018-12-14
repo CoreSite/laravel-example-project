@@ -24,7 +24,7 @@ export default class NavHeader extends React.Component {
                             <Link className="nav-link" to={'/'}>Home</Link>
                         </NavItem>
                         <NavItem>
-                            <Link className="nav-link" to={'/posts'}>News</Link>
+                            <Link className="nav-link" to={'/blog'}>Blog</Link>
                         </NavItem>
                     </Nav>
                 </Collapse>

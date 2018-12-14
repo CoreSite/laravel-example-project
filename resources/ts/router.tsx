@@ -8,7 +8,7 @@ ReactDOM.render(
     <Router>
         <React.Fragment>
             <Route exact={true} path="/" component={LayoutHome} />
-            <Route path="/posts" component={LayoutPosts} />
+            <Route path="/blog" component={LayoutPosts} />
         </React.Fragment>
     </Router>,
     document.getElementById("root")
